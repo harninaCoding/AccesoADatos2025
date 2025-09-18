@@ -1,55 +1,58 @@
 package ejemplos;
-import static org.junit.Assert.*;
 
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class AleatorioFalloTest {
-	// Si los metodos a probar no son estaticos
-	// debemos crear una isntancia o varias
-	AleatorioFallo instancia = new AleatorioFallo();
+import java.util.Iterator;
+
+import org.junit.jupiter.api.Test;
+
+class AleatorioFalloTest {
 
 	@Test
-	public void testGenerarAleatorio() {
-		// Yo controlo si el resultado esta en un margen
-		int min = 1, max = 10;
-		int resultado;
-		boolean bandera = true;
-		for (int i = 0; i < 1000; i++) {
-			resultado = instancia.generarAleatorio(min, max);
-			if (resultado < min || resultado > max)
-				bandera = false;
+	void testGenerarAleatorio() {
+		// valores de la prueba
+		int minimo = 0, maximo = 1;
+		boolean banderaMinima = false, banderaMaxima = false;
+//		int expected=?
+		AleatorioFallo aleatorioFallo = new AleatorioFallo();
+		for (int i = 0; i < 3; i++) {
+
+			// prueba del sut
+			int generarAleatorio=0;
+			try {
+				generarAleatorio = aleatorioFallo.generarAleatorio(minimo, maximo);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if (generarAleatorio == minimo)
+				banderaMinima = true;
+			if (generarAleatorio == maximo)
+				banderaMaxima = true;
+			// verificacion del resultado
+			assertTrue(generarAleatorio >= minimo);
+			assertTrue(generarAleatorio <= maximo);
 		}
-		assertTrue(bandera);
+		assertTrue(banderaMaxima);
+		assertTrue(banderaMinima);
 	}
 
 	@Test
-	public void testGenerarAleatorioDos() {
-		int min = 1, max = 10;
-		int resultado;
-		for (int i = 0; i < 1000; i++) {
-			resultado = instancia.generarAleatorio(min, max);
-			if (resultado < min || resultado > max)
-				fail("fuera de rango");
+	void testGenerarAleatorio2() {
+		// valores de la prueba
+		int minimo = 10, maximo = 1;
+		AleatorioFallo aleatorioFallo = new AleatorioFallo();
+		// prueba del sut
+		int generarAleatorio=0;
+		try {
+			generarAleatorio = aleatorioFallo.generarAleatorio(minimo, maximo);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		// verificacion del resultado
+		assertTrue(generarAleatorio >= minimo);
+		assertTrue(generarAleatorio <= maximo);
 	}
 
-	@Test
-	public void testGenerarAleatorioTres() {
-		int min = 1, max = 10;
-		int resultado;
-		for (int i = 0; i < 1000; i++) {
-			resultado = instancia.generarAleatorio(min, max);
-			assertEquals((max - min) / 2 + min, resultado, (max - min / 2));
-		}
-	}
-
-	@Test
-	public void testGenerarAleatorioCuatro() {
-		int min = 1, max = 10;
-		int resultado;
-		for (int i = 0; i < 1000; i++) {
-			resultado = instancia.generarAleatorio(min, max);
-			assertTrue(resultado <= max && resultado >= min);
-		}
-	}
 }

@@ -11,8 +11,10 @@ import org.junit.jupiter.api.Test;
 class EveryTestNeedsAValue08Test {
 	// imagimenos que necesitamos meter algunos valores para hacer las pruebas
 	// vamos a poner todas las posible combinaciones y las probamos
+	static {
+		System.out.println("soy un bloque estatico ");
+	}
 
-	
 	@BeforeAll
 	static void algo() {
 		System.out.println("Entrando en beforeAll");

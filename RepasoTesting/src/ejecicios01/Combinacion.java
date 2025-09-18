@@ -1,5 +1,6 @@
 package ejecicios01;
 
+//Genera una combinacion cinco elementos de cinco colores 
 public class Combinacion {
 
 	int[] cadena;

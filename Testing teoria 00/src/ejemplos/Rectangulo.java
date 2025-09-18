@@ -1,12 +1,10 @@
 package ejemplos;
 
 public class Rectangulo {
-	Punto superiorIzquierdo,inferiorIzquierdo,superiorDerecho,inferiorDerecho;
+	Punto superiorIzquierdo,inferiorDerecho;
 
-	public Rectangulo(Punto superiorIzquierdo, Punto inferiorIzquierdo, Punto superiorDerecho, Punto inferiorDerecho) {
+	public Rectangulo(Punto superiorIzquierdo,  Punto inferiorDerecho) {
 		this.superiorIzquierdo = superiorIzquierdo;
-		this.inferiorIzquierdo = inferiorIzquierdo;
-		this.superiorDerecho = superiorDerecho;
 		this.inferiorDerecho = inferiorDerecho;
 	}
 	
@@ -14,18 +12,14 @@ public class Rectangulo {
 		System.out.println("Este rectangulo tiene");
 		System.out.println("arribaizq: ");
 		superiorIzquierdo.mostrarEstado();
-		System.out.println("arribaDcha: ");
-		superiorDerecho.mostrarEstado();
-		System.out.println("abajoIzq: ");
-		inferiorIzquierdo.mostrarEstado();
 		System.out.println("abajoDcha: ");
 		inferiorDerecho.mostrarEstado();
 	}
 	
 	int calcularSuperficie(){
 		int base,altura;
-		base=superiorDerecho.posicionX-superiorIzquierdo.posicionX;
-		altura=superiorDerecho.posicionY-inferiorDerecho.posicionY;
+		base=superiorIzquierdo.posicionX-inferiorDerecho.posicionX;
+		altura=superiorIzquierdo.posicionY-inferiorDerecho.posicionY;
 		return base*altura; 
 	}
 	/**
@@ -37,15 +31,11 @@ public class Rectangulo {
 	 */
 	void desplazarRectangulo(int desplazamientoHorizontal,int desplazamientoVertical){
 		//Horizontal (tengo que modificar los cuatro puntos
-		inferiorIzquierdo.posicionX+=desplazamientoHorizontal;
 		inferiorDerecho.posicionX+=desplazamientoHorizontal;
 		superiorIzquierdo.posicionX+=desplazamientoHorizontal;
-		superiorDerecho.posicionX+=desplazamientoHorizontal;
 		//Vertical
-		inferiorIzquierdo.posicionY+=desplazamientoVertical;
 		inferiorDerecho.posicionY+=desplazamientoVertical;
 		superiorIzquierdo.posicionY+=desplazamientoVertical;
-		superiorDerecho.posicionY+=desplazamientoVertical;
 	}
 	
 }

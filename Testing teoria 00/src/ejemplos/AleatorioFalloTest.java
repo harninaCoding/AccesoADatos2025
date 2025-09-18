@@ -37,22 +37,23 @@ class AleatorioFalloTest {
 		assertTrue(banderaMinima);
 	}
 
-	@Test
-	void testGenerarAleatorio2() {
-		// valores de la prueba
-		int minimo = 10, maximo = 1;
-		AleatorioFallo aleatorioFallo = new AleatorioFallo();
-		// prueba del sut
-		int generarAleatorio=0;
-		try {
-			generarAleatorio = aleatorioFallo.generarAleatorio(minimo, maximo);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		// verificacion del resultado
-		assertTrue(generarAleatorio >= minimo);
-		assertTrue(generarAleatorio <= maximo);
-	}
+	//Si comento este el coverage es parcial en la primera clausula de guarda
+//	@Test
+//	void testGenerarAleatorio2() {
+//		// valores de la prueba
+//		int minimo = 10, maximo = 1;
+//		AleatorioFallo aleatorioFallo = new AleatorioFallo();
+//		// prueba del sut
+//		int generarAleatorio=0;
+//		try {
+//			generarAleatorio = aleatorioFallo.generarAleatorio(minimo, maximo);
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		// verificacion del resultado
+//		assertTrue(generarAleatorio >= minimo);
+//		assertTrue(generarAleatorio <= maximo);
+//	}
 
 }

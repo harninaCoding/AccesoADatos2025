@@ -45,7 +45,7 @@ class CCuentaTest {
 		} catch (Exception e) {
 			
 		}
-
+//PA diegui
 	}
 
 	@Test

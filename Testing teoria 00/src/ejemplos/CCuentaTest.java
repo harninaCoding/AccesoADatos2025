@@ -72,6 +72,11 @@ class CCuentaTest {
 			fail();
 		} catch (Exception e) {
 		}
+		try {
+			cuenta.retirar(-1);
+			fail();
+		} catch (Exception e) {
+		}
 	}
 
 }

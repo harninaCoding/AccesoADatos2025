@@ -1,12 +1,17 @@
 package ejemplos;
 public class Ventana {
-	boolean abierta = false;
+	private boolean abierta = false;
 
-	void abrirVentana() {
+	public void abrirVentana() {
 		abierta = true;
 	}
 
-	void cerrarVentana() {
+	public void cerrarVentana() {
 		abierta = false;
 	}
+
+	public boolean isAbierta() {
+		return abierta;
+	}
+	
 }

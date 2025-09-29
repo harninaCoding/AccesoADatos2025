@@ -1,4 +1,4 @@
-package cohesionfuncional.mal;
+package cohesionfuncional01.mal;
 
 import org.junit.jupiter.api.Test;
 

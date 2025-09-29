@@ -1,4 +1,4 @@
-package cohesionfuncional.mal;
+package cohesionfuncional01.mal;
 
 public class SomeObject {
 	public void FirstCall() {

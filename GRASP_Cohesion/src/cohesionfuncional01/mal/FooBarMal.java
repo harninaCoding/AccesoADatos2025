@@ -1,4 +1,4 @@
-package cohesionfuncional.mal;
+package cohesionfuncional01.mal;
 
 //Cohesion coincidental, comparten espacio pero no se comunican
 public class FooBarMal {

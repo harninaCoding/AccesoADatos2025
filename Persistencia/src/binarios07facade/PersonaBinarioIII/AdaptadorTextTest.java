@@ -26,5 +26,17 @@ class AdaptadorTextTest {
 			e.printStackTrace();
 		} 
 	}
-
+	@Test
+	void testbinarioArticulo() {
+		try {
+			AdaptadorBinario<List<Articulo>, Articulo> adaptadorBinarioArticulo=
+					new AdaptadorBinario<List<Articulo>, Articulo>("articulos.dat",
+							new AdecuadorArticuloBinario());
+			Articulo articulo=new Articulo(1, "tornillo", 1f);
+			adaptadorBinarioArticulo.grabar(articulo);
+			List<Articulo> leer = adaptadorBinarioArticulo.leer();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

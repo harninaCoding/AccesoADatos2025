@@ -7,8 +7,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
-public class AdaptadorSerializadoMonoObjeto<S> {
+public class AdaptadorSerializadoMonoObjeto<S extends Serializable> implements PersistenciableMonoObjeto<S,S>{
 
 	private File file;
 	private ObjectInputStream flujoR;
@@ -22,6 +23,7 @@ public class AdaptadorSerializadoMonoObjeto<S> {
 
 	}
 
+	@Override
 	public S leer() {
 		//Este es el flujo que hay que cerrar
 		FileInputStream in = null;
@@ -55,7 +57,7 @@ public class AdaptadorSerializadoMonoObjeto<S> {
 		}
 		return objetos;
 	};
-
+	@Override
 	public boolean grabar(S objeto) {
 		boolean retorno = false;
 		try {

@@ -1,5 +1,6 @@
 package serializacion08.monoobjetoList02;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -17,8 +18,9 @@ public class AdaptadorSerializableListaIndexable<T extends Keyable<K>,K> impleme
 		if(path.isEmpty()) throw new Exception("ruta vacia");
 		this.path = path;
 		adaptadorSerializadoMonoObjeto=new AdaptadorSerializadoMonoObjeto<HashMap<K,T>>(path);
-		elementos = adaptadorSerializadoMonoObjeto.leer();
-		if(elementos==null) {
+		try {
+			elementos = adaptadorSerializadoMonoObjeto.leer();
+		} catch (IOException e) {
 			elementos=new HashMap<K, T>();
 			adaptadorSerializadoMonoObjeto.grabar(elementos);
 		}

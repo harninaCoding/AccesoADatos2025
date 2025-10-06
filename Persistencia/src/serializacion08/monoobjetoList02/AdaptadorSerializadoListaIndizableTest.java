@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.File;
+import java.util.Optional;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,12 +25,12 @@ class AdaptadorSerializadoListaIndizableTest {
 
 	@Test
 	void testIndizable() {
-		Cliente vacio = adaptadorSerializableListaIndexable.leer(2);
-		assertNull(vacio);
+		Optional<Cliente> vacio = adaptadorSerializableListaIndexable.leer(2);
+		assertTrue(vacio.isEmpty());
 		Cliente cliente = new Cliente(1, "Luis", false, 0);
 		try {
 			adaptadorSerializableListaIndexable.grabar(cliente);
-			Cliente leer = adaptadorSerializableListaIndexable.leer(cliente.getNumero());
+			Cliente leer = adaptadorSerializableListaIndexable.leer(cliente.getNumero()).get();
 			assertEquals(cliente, leer);
 		} catch (Exception e) {
 			e.printStackTrace();

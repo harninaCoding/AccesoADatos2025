@@ -24,12 +24,12 @@ public class AdaptadorSerializadoMonoObjeto<S extends Serializable> implements P
 	}
 
 	@Override
-	public S leer() {
+	public S leer() throws IOException {
 		//Este es el flujo que hay que cerrar
 		FileInputStream in = null;
+		//porque es importante no defenderse
 		try {
 			 in= new FileInputStream(file);
-			this.flujoR = new ObjectInputStream(in);
 		} catch (Exception e) {
 			try {
 				in.close();
@@ -38,12 +38,14 @@ public class AdaptadorSerializadoMonoObjeto<S extends Serializable> implements P
 				e1.printStackTrace();
 			}
 		}
+		this.flujoR = new ObjectInputStream(in);
 		S objetos = null;
 		if (file.exists()) {
 			try {
 				try {
 					objetos = (S) flujoR.readObject();
 				} catch (ClassNotFoundException e) {
+					in.close();
 					e.printStackTrace();
 				}
 				} catch (IOException e) {

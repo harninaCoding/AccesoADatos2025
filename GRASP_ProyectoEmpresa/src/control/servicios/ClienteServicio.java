@@ -2,6 +2,7 @@ package control.servicios;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import modelo.data.Cliente;
 import modelo.repositorios.AdaptadorSerializableListaIndexable;
@@ -11,10 +12,12 @@ public class ClienteServicio {
 	private String path;
 
 	public Optional<Cliente> getByKey(String clave) {
-		return Optional.ofNullable(adaptador.leer(clave));
+		return adaptador.leer(clave);
 	}
 
 	public List<Cliente> getClientesByProvincia(String provincia) {
-		adaptador.getTodos().stream().filter(cliente->cliente.getProvincia().equals(provincia));
+		return adaptador.getTodos().stream()
+				.filter(cliente -> cliente.getProvincia().equals(provincia))
+				.collect(Collectors.toList());
 	}
 }

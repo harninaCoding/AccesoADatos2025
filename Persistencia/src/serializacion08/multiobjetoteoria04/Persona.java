@@ -1,4 +1,4 @@
-package modelo.data;
+package serializacion08.multiobjetoteoria04;
 
 public class Persona{
 	// propiedades

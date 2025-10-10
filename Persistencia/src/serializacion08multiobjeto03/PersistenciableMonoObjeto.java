@@ -1,4 +1,4 @@
-package serializacion08.monoobjetoList02;
+package serializacion08multiobjeto03;
 
 import java.io.IOException;
 

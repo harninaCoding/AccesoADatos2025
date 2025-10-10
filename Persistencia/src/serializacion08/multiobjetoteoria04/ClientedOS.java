@@ -1,17 +1,17 @@
-package modelo.data;
+package serializacion08.multiobjetoteoria04;
 
 import java.io.Serializable;
 
-import modelo.repositorios.Keyable;
-
-public class Cliente extends Persona implements Serializable,Keyable<String>{
+	
+public class ClientedOS extends Persona implements Serializable,Keyable<String>{
 	
 	private float descuento = 0;
 	private String provincia;
 
 	
+	
 	// metodos
-	public Cliente(String dniCliente, String nombre) {
+	public ClientedOS(String dniCliente, String nombre) {
 		super(dniCliente, nombre);
 	}
 
@@ -19,12 +19,12 @@ public class Cliente extends Persona implements Serializable,Keyable<String>{
 		return provincia;
 	}
 
-	public Cliente(String dNICliente, String nombre, float descuento, String provincia) {
+	public ClientedOS(String dNICliente, String nombre, float descuento, String provincia) {
 		this(dNICliente, nombre,descuento);
 		this.provincia = provincia;
 	}
 
-	public Cliente(String dNICliente, String nombre, float descuento) {
+	public ClientedOS(String dNICliente, String nombre, float descuento) {
 		this(dNICliente, nombre);
 		setDescuento(descuento);
 	}

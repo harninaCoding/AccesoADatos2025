@@ -1,10 +1,13 @@
-package modelo.repositorios;
+package modelo.repositorios.monoobjetolista;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import modelo.accesores.Keyable;
+import modelo.accesores.monoobjetolista.AdaptadorSerializadoMonoObjeto;
 
 public class AdaptadorSerializableListaIndexable<T extends Keyable<K>,K> implements AccesoIndexado<T, K> {
 	private HashMap<K, T> elementos;

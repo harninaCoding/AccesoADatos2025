@@ -1,10 +1,14 @@
-package serializacion08multiobjeto03;
+package modelo.repositorios.serializadomultiobjetoindexado;
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import modelo.accesores.Keyable;
+import modelo.accesores.serializadomultiobjetoindexado.AlmacenSerializadoMonoObjeto;
+import modelo.accesores.serializadomultiobjetoindexado.AlmacenSerializadoMultiObjeto;
 
 public class RepositorioSerializadoMultiObjetoIndexable<T extends Keyable<K> & Serializable, K>
 		implements RepositorioIndexado<T, K> {

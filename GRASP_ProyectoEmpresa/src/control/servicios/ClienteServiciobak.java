@@ -5,10 +5,10 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import modelo.data.Cliente;
-import modelo.repositorios.serializadomultiobjetoindexado.RepositorioSerializadoMultiObjetoIndexable;
+import modelo.repositorios.monoobjetolista.AdaptadorSerializableListaIndexable;
 
-public class ClienteServicio {
-	private RepositorioSerializadoMultiObjetoIndexable<Cliente, String> adaptador;
+public class ClienteServiciobak {
+	private AdaptadorSerializableListaIndexable<Cliente, String> adaptador;
 	private String path;
 
 	public Optional<Cliente> getByKey(String clave) {

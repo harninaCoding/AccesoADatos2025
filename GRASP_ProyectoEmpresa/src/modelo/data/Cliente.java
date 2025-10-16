@@ -2,7 +2,7 @@ package modelo.data;
 
 import java.io.Serializable;
 
-import modelo.repositorios.Keyable;
+import modelo.accesores.Keyable;
 
 public class Cliente extends Persona implements Serializable,Keyable<String>{
 	

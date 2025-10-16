@@ -1,4 +1,4 @@
-package modelo.repositorios;
+package test;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,6 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import modelo.data.Cliente;
+import modelo.repositorios.monoobjetolista.AdaptadorSerializableListaIndexable;
 
 class AdaptadorSerializadoListaIndizableTest {
 	AdaptadorSerializableListaIndexable<Cliente, String> adaptadorSerializableListaIndexable;

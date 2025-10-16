@@ -1,4 +1,4 @@
-package modelo.repositorios;
+package modelo.accesores.monoobjetolista;
 
 import java.io.File;
 import java.io.FileInputStream;

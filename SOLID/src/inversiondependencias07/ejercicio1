@@ -1,0 +1,4 @@
+texto
+aplica la inyeccion de dependencias para el pago por cash
+y para almacenar las compras en forma sql y no sql.
+Piensa en la posibilidad futura de que admitan otro tiupo de pago: bizum
